@@ -117,14 +117,14 @@ function App() {
         /> 
         : 
         <>
-          <div className='text-3xl  position-relative text-center mt-10 mb-4 font-lg'>
-            Public Noise
+          <div className='text-3xl  position-relative mt-10 mb-4 font-bold ml-32'>
+            <h2>PUBLIC NOISE</h2>
           </div>
         <div className='mx-28 flex'>
           <div className='w-1/3 h-80'>
               <div className='m-4 rounded-xl'>
                 <ul>
-                  <a href=''><li className='bg-gray-300 mb-6 p-7 text-center hover:bg-gray-400 rounded-xl shadow-md'>Home</li></a>
+                  <a href=''><li className='bg-gray-300 mb-6 p-7 text-center hover:bg-gray-400 rounded-xl shadow-md font-semibold'>Home</li></a>
                   <li><Button className='shadow-md mb-3 p-8 w-full bg-gray-600' onClick={signout}>
                     Logout
                   </Button></li>
@@ -136,6 +136,7 @@ function App() {
               <div className='shadow-md bg-gray-300 rounded-xl mb-6 p-7 m-4'>
                 <PostForm onPost={fetchPosts} />
               </div>
+              <p className='mx-8 text-xl font-semibold'>Feed</p>
                 {posts?.length > 0 && posts.map(post => (
                 <PostCard key={post.id} {...post} />
                 ))}
