@@ -66,7 +66,7 @@ export default function PostForm({onPost}) {
             />
             <Button className='float-right mt-6' onClick={handleUpload} disabled={uploads.length === 0 || isUploading}>Share</Button>
         <div className='w-4/5 inline-flex mt-2'>
-        <div className='mt-4'>
+        <div className='mt-4 p-1 bg-gray-500 hover:bg-gray-200 rounded-lg'>
                 <label>
                     <input type='file' className='hidden' onChange={addsounds} />
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
@@ -76,7 +76,7 @@ export default function PostForm({onPost}) {
             </div>
             <div className='mt-2 ml-4'>
             {uploads.length === 0 && (
-                <p className="text-red-800 mt-2">File required</p>
+                <p className="text-red-800 mt-3 border-b-2 border-gray-400 w-40">File required</p>
             )}
             {uploads.length > 0 && (
                 <div className="flex gap-2">

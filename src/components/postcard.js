@@ -44,7 +44,7 @@ const PostCard = ({ content, sounds }) => {
 
     return (
         <div>
-            <Card className="p-4 m-4">
+            <Card className="p-4 m-4 bg-green-300">
                 <div className='w-full grid grid-cols-2'>
                     <div className='w-full border-b-2 mb-2 pl-2'>
                         <p>{content}</p>

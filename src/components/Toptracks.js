@@ -21,7 +21,7 @@ const Toptracks = () => {
       const fetchTopTracksByCountry = async () => {
         setLoading(true);
         try {
-          const response = await axios.get('http://ws.audioscrobbler.com/2.0/', {
+          const response = await axios.get('https://ws.audioscrobbler.com/2.0/', {
             params: {
               method: 'geo.gettoptracks',
               country: selectedCountry,

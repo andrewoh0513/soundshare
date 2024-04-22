@@ -125,7 +125,10 @@ function App() {
           <div className='w-1/3 h-80'>
               <div className='m-4 rounded-xl'>
                 <ul>
-                  <li className='bg-gray-300 mb-6 p-7 text-center hover:bg-gray-400 rounded-xl shadow-md font-semibold'>Home</li>
+                  <li className='pl-8 bg-gray-300 mb-6 p-7 py-10 hover:bg-gray-400 rounded-xl shadow-md font-semibold'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokWidth="1.5" stroke="currentColor" className="w-6 h-6 float-left mr-8">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                  </svg>
+                  Home</li>
                   <li><Button className='shadow-md mb-3 p-8 w-full bg-gray-600' onClick={signout}>
                     Logout
                   </Button></li>
