@@ -53,6 +53,7 @@ function App() {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line no-unused-vars
     const { data: authListener } = supabase.auth.onAuthStateChange(
       (event, session) => {
         setUser(session?.user ?? null);

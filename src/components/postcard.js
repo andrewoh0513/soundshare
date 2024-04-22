@@ -15,6 +15,7 @@ const PostCard = ({ content, sounds }) => {
     
     const fetchPosts = async () => {
         try {
+            // eslint-disable-next-line no-unused-vars
             const { data: postsData, error } = await supabase.from('posts').select('content, sounds');
             if (error) {
                 console.error('Error fetching posts:', error.message);
