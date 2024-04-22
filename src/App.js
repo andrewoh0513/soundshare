@@ -53,7 +53,7 @@ function App() {
   };
 
   useEffect(() => {
-    const authListener = supabase.auth.onAuthStateChange(
+    const { data: authListener } = supabase.auth.onAuthStateChange(
       (event, session) => {
         setUser(session?.user ?? null);
         setUserId(session?.user?.id || '');
@@ -61,9 +61,6 @@ function App() {
     );
     getUser();
     fetchPosts();
-    return () => {
-      authListener.unsubscribe();
-    };
   }, []);
 
 

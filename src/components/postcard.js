@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import { Card } from "@material-tailwind/react";
 
@@ -7,22 +7,22 @@ const supabase = createClient(
     process.env.REACT_APP_ANON_KEY
 );
 
-const PostCard = ({content, sounds}) => {
-    
-
-    const [posts, setPosts] = useState([]);
+const PostCard = ({ content, sounds }) => {
     
     useEffect(() => {
         fetchPosts();
     }, []);
     
     const fetchPosts = async () => {
-        const { data: postsData, error } = await supabase.from('posts').select('content, sounds');
+        try {
+            const { data: postsData, error } = await supabase.from('posts').select('content, sounds');
             if (error) {
                 console.error('Error fetching posts:', error.message);
                 return;
             }
-            setPosts(postsData);
+        } catch (error) {
+            console.error('Error fetching posts:', error.message);
+        }
     };
 
     const handleDownload = async () => {
@@ -32,7 +32,7 @@ const PostCard = ({content, sounds}) => {
             const url = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            link.download = 'sound'; // Set the download filename
+            link.download = 'sound';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -41,31 +41,30 @@ const PostCard = ({content, sounds}) => {
         }
     };
 
-    
-        return (
-            <div>
-                <Card className="p-4 m-4">
-                    <div className='w-full grid grid-cols-2'>
-                        <div className='w-full border-b-2 mb-2 pl-2'>
+    return (
+        <div>
+            <Card className="p-4 m-4">
+                <div className='w-full grid grid-cols-2'>
+                    <div className='w-full border-b-2 mb-2 pl-2'>
                         <p>{content}</p>
-                        </div>
-                        <div className="ml-auto w-8 mb-5">
-                            <label>
+                    </div>
+                    <div className="ml-auto w-8 mb-5">
+                        <label>
                             <button className='hidden' color="blue-200" onClick={handleDownload}></button>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
                             </svg>
-                            </label>
-                        </div>
+                        </label>
                     </div>
-                    <div>
-                        <audio className='w-full mt-2' controls>
-                            <source src={sounds} alt=""/>
-                        </audio>
-                    </div>
-                </Card>
+                </div>
+                <div>
+                    <audio className='w-full mt-2' controls>
+                        <source src={sounds} alt=""/>
+                    </audio>
+                </div>
+            </Card>
         </div>
-        );
-    };
+    );
+};
 
 export default PostCard;
