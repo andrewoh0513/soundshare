@@ -76,7 +76,7 @@ export default function PostForm({onPost}) {
             </div>
             <div className='mt-2 ml-4'>
             {uploads.length === 0 && (
-                <p className="text-red-800 mt-3 border-b-2 border-red-500 w-40">File required</p>
+                <p className="text-red-800 mt-3 border-b-2 border-red-700 w-full">File required</p>
             )}
             {uploads.length > 0 && (
                 <div className="flex gap-2">
