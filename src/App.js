@@ -124,7 +124,7 @@ function App() {
           <div className='w-1/3 h-80'>
               <div className='m-4 rounded-xl'>
                 <ul>
-                  <a href=''><li className='bg-gray-300 mb-6 p-7 text-center hover:bg-gray-400 rounded-xl shadow-md font-semibold'>Home</li></a>
+                  <a><li className='bg-gray-300 mb-6 p-7 text-center hover:bg-gray-400 rounded-xl shadow-md font-semibold'>Home</li></a>
                   <li><Button className='shadow-md mb-3 p-8 w-full bg-gray-600' onClick={signout}>
                     Logout
                   </Button></li>
