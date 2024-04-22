@@ -44,7 +44,7 @@ const Toptracks = () => {
     return (
       <div>
         <div className='shadow-md bg-gray-300 m-4 rounded-xl p-5 pr-9 mb-8'>
-        <h1 className='m-2'>Top Tracks by Country</h1>
+        <h1 className='m-2 font-semibold'>Top Tracks by Country</h1>
         <select className='focus:outline-none rounded-xl w-full m-2' value={selectedCountry} onChange={handleCountryChange}>
           {countries.map(country => (
             <option key={country} value={country}>{country}</option>

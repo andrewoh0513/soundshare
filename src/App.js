@@ -12,7 +12,7 @@ const supabase = createClient(
   process.env.REACT_APP_ANON_KEY
 );
 
-document.body.style = 'background: #AEC2B9;';
+document.body.style = 'background: #A1B5D8;';
 
 function App() {
   const [posts,setPosts] = useState([]);
