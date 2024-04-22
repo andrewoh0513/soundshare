@@ -43,7 +43,7 @@ const Toptracks = () => {
   
     return (
       <div>
-        <div className='shadow-md bg-gray-300 m-4 rounded-xl p-5 pr-9 mb-8'>
+        <div className='shadow-md bg-gray-200 m-4 rounded-xl p-5 pr-9 mb-8'>
         <h1 className='m-2 font-semibold'>Top Tracks by Country</h1>
         <select className='focus:outline-none rounded-xl w-full m-2' value={selectedCountry} onChange={handleCountryChange}>
           {countries.map(country => (
@@ -51,7 +51,7 @@ const Toptracks = () => {
           ))}
         </select>
         </div>
-        <div className='shadow-md rounded-xl bg-gray-300 m-4 py-4'>
+        <div className='shadow-md rounded-xl bg-gray-200 m-4 py-4'>
         <div className='max-h-48 overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 pr-6'>
                 <div>
         {loading ? (
